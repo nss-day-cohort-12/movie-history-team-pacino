@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Music History - Angular</title>
+
+  <!-- CSS Not Applied (Should be Sass)  -->
+  <!-- <link rel="stylesheet" type="text/css" href="css/sample.css"> -->
+</head>
+
+<!-- Body Tag with ng-app directive applied  -->
+<body ng-app="MovieApp">
+  
+  <!-- <div ng-controller="SongCtrl"> -->
+    <!-- <nav ng-include="'partials/song-nav.html'"></nav> -->
+    <!-- Main View Div  -->
+  <!-- </div> -->
+    <div ng-view></div>
+  
+  <!-- Component Links  -->
+  <script src="lib/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="lib/bower_components/angular/angular.min.js"></script>
+  <script src="lib/bower_components/angular-route/angular-route.js"></script>
+  <script src="lib/bower_components/firebase/firebase.js"></script>
+  <script src="lib/bower_components/angularfire/dist/angularfire.min.js"></script>
+
+  <!-- main app file -->
+  <script src="app/app.js"></script>
+  <!-- factories file -->
+  <script src="app/factories/MovieStorage.js"></script>
+  <!-- controllers -->
+  <script src="app/controllers/MyMoviesCtrl.js"></script>
+
+</body>
+</html>
