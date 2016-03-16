@@ -30,9 +30,9 @@ MovieApp.config(["$routeProvider",
         templateUrl: "partials/login.html",
         controller: "LoginCtrl"
       }).
-      when("/songs/new", {
-        templateUrl: "partials/song-form.html",
-        controller: "SongFormCtrl"
+      when("/search", {
+        templateUrl: "partials/search.html",
+        controller: "SearchCtrl"
         // resolve: { isAuth }
       }).
       when("/songs/:songId", {
@@ -46,30 +46,30 @@ MovieApp.config(["$routeProvider",
   }]);
 
 // "run" method on the angular app module, allows determining initial page functionality
-// MovieApp.run([
-//   "$location",
+MovieApp.run([
+  "$location",
 
-// function ($location) {
-//     let myFirebase = new Firebase("https://burning-heat-2902.firebaseio.com");
+  function ($location) {
+    let myFirebase = new Firebase("https://nssmoviesapp.firebaseio.com");
 
-//     myFirebase.onAuth(authData => {
-//       if (!authData) {
-//         $location.path("/login");
-//       }
-//     });
-//   }
-// ]);
+    myFirebase.onAuth(authData => {
+      if (!authData) {
+        $location.path("/login");
+      }
+    });
+  }
+]);
 
 /*
   Define a promise for any view that needs an authenticated user
   before it will resolve (see below)
  */
-// let isAuth = (authFactory) => new Promise((resolve, reject) => {
-//   if (authFactory.isAuthenticated()) {
-//     console.log("User is authenticated, resolve route promise");
-//     resolve();
-//   } else {
-//     console.log("User is not authenticated, reject route promise");
-//     reject();
-//   }
-// });
+let isAuth = (authFactory) => new Promise((resolve, reject) => {
+  if (authFactory.isAuthenticated()) {
+    console.log("User is authenticated, resolve route promise");
+    resolve();
+  } else {
+    console.log("User is not authenticated, reject route promise");
+    reject();
+  }
+});
