@@ -6,6 +6,7 @@ MovieApp.factory("UserSearchFactory", ($q, $http) =>
       $http
         .get('http://www.omdbapi.com/?t=frozen&y=&plot=short&r=json')
         .success(
+          console.log(searchedMovie);
           searchedMovie => resolve(searchedMovie),
           error => reject(error)
         )
