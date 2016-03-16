@@ -21,17 +21,17 @@ MovieApp.controller("SearchCtrl",
 
     $scope.userName = "";
 
-    // $scope.searchMovie = function() {
+    $scope.searchMovie = function() {
 
-    //     $http
-    //       // batman test
-    //       .get(`http://www.omdbapi.com/?t=batman&y=&plot=short&r=json`)
-    //       .then(
-    //         moviesObject => resolve(moviesObject.data),
-    //         error => reject(error)
-    //       );
+        $http
+          // batman test
+          .get(`http://www.omdbapi.com/?t=batman&y=&plot=short&r=json`)
+          .then(
+            moviesObject => resolve(moviesObject.data),
+            error => reject(error)
+          );
 
-    // };
+    };
 
     // Function bound to the Add Song button in the view template
     $scope.addMovie = function () {
