@@ -6,6 +6,7 @@ MovieApp.controller("SearchCtrl",
   "$location",
   "$http",
   "firebaseURL",
+  "UserSearchFactory",
 
 
   function ($scope, $location, $http, firebaseURL) {
@@ -21,17 +22,13 @@ MovieApp.controller("SearchCtrl",
 
     $scope.userName = "";
 
-    // $scope.searchMovie = function() {
+    $scope.searchMovie = function() {
 
-    //     $http
-    //       // batman test
-    //       .get(`http://www.omdbapi.com/?t=batman&y=&plot=short&r=json`)
-    //       .then(
-    //         moviesObject => resolve(moviesObject.data),
-    //         error => reject(error)
-    //       );
+      UserSearchFactory().then(
 
-    // };
+      )
+
+    };
 
     // Function bound to the Add Song button in the view template
     $scope.addMovie = function () {
