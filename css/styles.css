@@ -2,12 +2,15 @@ body{display:flex;min-height:100vh;flex-direction:column}
 
 main{flex:1 0 auto}
 
-#movieBox {
+.movieBox {
   width: 200px;
   height: 286px;
+  border: 2px solid #666;
+  float: left;
+  margin: 20px;
 }
 
-#movieBox img {
+#showPostersHere img {
   width: 100%;
   height: 100%;
 }
